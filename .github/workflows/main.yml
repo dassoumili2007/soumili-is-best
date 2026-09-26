@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Page</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        .profile-container {
+            max-width: 850px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Header & Banner Styles */
+        .cover-photo {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 100%;
+        }
+
+        .profile-header {
+            text-align: center;
+            padding: 0 20px 25px 20px;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .avatar-container {
+            width: 130px;
+            height: 130px;
+            margin: -65px auto 15px auto;
+            border-radius: 50%;
+            border: 5px solid var(--card-bg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-header h1 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .profile-header .title {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Action Buttons */
+        .actions-btn {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        /* Social Icons Section */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content Layout */
+        .profile-body {
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .bio-section {
+            margin-bottom: 35px;
+        }
+
+        .bio-section p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Info Grid Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 11fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #f9fafb;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .info-card h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Breakpoint */
+        @media (max-width: 600px) {
+            .profile-container {
+                margin: 10px;
+            }
+            .cover-photo {
+                height: 140px;
+            }
+            .actions-btn {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            .btn {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- Top Cover Image/Gradient -->
+        <div class="cover-photo"></div>
+
+        <!-- Profile Basic Info Panel -->
+        <div class="profile-header">
+            <div class="avatar-container">
+                <!-- Replace with your actual image path -->
+                <img src="https://placeholder.com" alt="User Avatar">
+            </div>
+            <h1>Alex Morgan</h1>
+            <p class="title">UI/UX Designer & Frontend Developer</p>
+            
+            <div class="actions-btn">
+                <a href="#" class="btn btn-primary">Follow</a>
+                <a href="#" class="btn btn-secondary">Message</a>
+            </div>
+
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+        </div>
+
+        <!-- Profile Secondary / Bio Data Panel -->
+        <div class="profile-body">
+            <div class="bio-section">
+                <h2 class="section-title">About Me</h2>
+                <p>Hello! I am a passionate designer and developer based in San Francisco. I specialize in building highly accessible, intuitive digital web experiences using modern layouts, semantic HTML, and fluid user interface interactions.</p>
+            </div>
+
+            <h2 class="section-title">Details & Stats</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Location</h3>
+                    <p>San Francisco, CA</p>
+                </div>
+                <div class="info-card">
+                    <h3>Experience</h3>
+                    <p>5+ Years Freelancing</p>
+                </div>
+                <div class="info-card">
+                    <h3>Availability</h3>
+                    <p>Open to Full-Time Roles</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
